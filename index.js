@@ -12,11 +12,11 @@ let dmcs = true;
 
 client.on('messageCreate', async (message) => {
     if (message.author.id !== client.user.id) return;
-    if (message.content.toLowerCase() === 'Owobanbypass') {
+    if (message.content.toLowerCase() === 'owobanbypass') {
         try {
             await message.delete();
             await message.channel.send('owobanbypass is now **enabled**!');
-            dmc = true;
+            dmcs = true;
             while (dmcs) {
                 await message.channel.send('ouse 53 67 74');
                 await sleep(5);
@@ -80,6 +80,10 @@ client.on('messageCreate', async (message) => {
                 await message.channel.send('owo cash');
                 console.log('succefully cash');
                 await sleep(90);
+                if(!dmcs) {
+                    console.log('owobanbypass is now disabled!');
+                    break;
+                }
             }
         } catch (error) {
             console.log(error);
@@ -87,7 +91,6 @@ client.on('messageCreate', async (message) => {
     }
     if (message.content.toLowerCase() === 'autoowostop') {
         try {
-
             await message.delete();
             await message.channel.send('owobanbypass is now **disabled**!');
             dmcs = false;
